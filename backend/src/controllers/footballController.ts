@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import sportmonksAPI from "../config/apiConfig";
+import { rapidAPI, liveFootballTransfersAPI } from "../config/apiConfig";
 
 // GET PRE-MATCH/POST-MATCH NEWS
 export const getNews = async (req: Request, res: Response): Promise<void> => {
   try {
-    const response = await sportmonksAPI.get("/news/pre-match");
+    const response = await rapidAPI.get("/news/v2/list");
     res.status(200).json(response.data);
   } catch (err) {
     const error = err as any;
@@ -18,7 +18,7 @@ export const getLiveScores = async (
   res: Response
 ): Promise<void> => {
   try {
-    const response = await sportmonksAPI.get("/livescores");
+    const response = await rapidAPI.get("/matches/v2/list-live");
     res.status(200).json(response.data);
   } catch (err) {
     const error = err as any;
@@ -32,7 +32,18 @@ export const getTeamInfo = async (
   res: Response
 ): Promise<void> => {
   try {
-    const response = await sportmonksAPI.get(`/teams/${req.query.id}`);
+    const response = await rapidAPI.get(`/teams/detail?ID=${req.query.id}`);
+    res.status(200).json(response.data);
+  } catch (err) {
+    const error = err as any;
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// GET SEARCH FOR PLAYER AND TEAM
+export const getSearch = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const response = await rapidAPI.get(`/v2/search?Query=${req.query.query}`);
     res.status(200).json(response.data);
   } catch (err) {
     const error = err as any;
@@ -46,7 +57,7 @@ export const getAllTransfers = async (
   res: Response
 ): Promise<void> => {
   try {
-    const response = await sportmonksAPI.get("/transfers");
+    const response = await liveFootballTransfersAPI.get("/news");
     res.status(200).json(response.data);
   } catch (err) {
     const error = err as any;

@@ -1,11 +1,19 @@
 import axios from "axios";
 
-const sportmonksAPI = axios.create({
+// Create a new axios instance with a custom config LIVESCORE6
+export const rapidAPI = axios.create({
   baseURL: "https://livescore6.p.rapidapi.com",
   headers: {
-    "x-rapidapi-key": "c985aa66c8msh68b80898819a690p1411c8jsn1458117435bc",
+    "x-rapidapi-key": process.env.API_FOOTBALL_TOKEN,
     "x-rapidapi-host": "livescore6.p.rapidapi.com",
   },
 });
 
-export default sportmonksAPI;
+// Create a new axios instance with a custom config FOOTBALLDATA
+export const liveFootballTransfersAPI = axios.create({
+  baseURL: "https://live-football-transfers-in-europe.p.rapidapi.com",
+  headers: {
+    "x-rapidapi-key": process.env.API_FOOTBALL_TOKEN,
+    "x-rapidapi-host": "live-football-transfers-in-europe.p.rapidapi.com",
+  },
+});
