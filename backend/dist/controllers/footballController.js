@@ -8,16 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllTransfers = exports.getTeamInfo = exports.getLiveScores = exports.getNews = void 0;
-const apiConfig_1 = __importDefault(require("../config/apiConfig"));
+exports.getAllTransfers = exports.getSearch = exports.getTeamInfo = exports.getLiveScores = exports.getNews = void 0;
+const apiConfig_1 = require("../config/apiConfig");
 // GET PRE-MATCH/POST-MATCH NEWS
 const getNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield apiConfig_1.default.get("/news/v2/list");
+        const response = yield apiConfig_1.rapidAPI.get("/news/v2/list");
         res.status(200).json(response.data);
     }
     catch (err) {
@@ -29,7 +26,7 @@ exports.getNews = getNews;
 // GET LIVESCORES
 const getLiveScores = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield apiConfig_1.default.get("/livescores");
+        const response = yield apiConfig_1.rapidAPI.get("/matches/v2/list-live");
         res.status(200).json(response.data);
     }
     catch (err) {
@@ -41,7 +38,7 @@ exports.getLiveScores = getLiveScores;
 // GET TEAM INFORMATION
 const getTeamInfo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield apiConfig_1.default.get(`/teams/${req.query.id}`);
+        const response = yield apiConfig_1.rapidAPI.get(`/teams/detail?ID=${req.query.id}`);
         res.status(200).json(response.data);
     }
     catch (err) {
@@ -50,10 +47,22 @@ const getTeamInfo = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.getTeamInfo = getTeamInfo;
+// GET SEARCH FOR PLAYER AND TEAM
+const getSearch = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield apiConfig_1.rapidAPI.get(`/v2/search?Query=${req.query.query}`);
+        res.status(200).json(response.data);
+    }
+    catch (err) {
+        const error = err;
+        res.status(500).json({ message: error.message });
+    }
+});
+exports.getSearch = getSearch;
 // GET ALL TRANSFERS
 const getAllTransfers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield apiConfig_1.default.get("/transfers");
+        const response = yield apiConfig_1.liveFootballTransfersAPI.get("/news");
         res.status(200).json(response.data);
     }
     catch (err) {

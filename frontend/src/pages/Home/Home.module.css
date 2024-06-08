@@ -1,4 +1,24 @@
 .home {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
   padding: 20px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.499);
+  border-radius: 20px;
+}
+
+.topSection {
+  display: flex;
+  height: 50%;
+  gap: 1rem;
+}
+
+.news {
+  flex: 1;
+}
+
+.liveScores {
+  margin-top: 1rem;
 }
