@@ -1,0 +1,78 @@
+.resultContainer {
+  margin-top: 2%;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.231);
+  border-radius: 1em;
+  display: flex;
+  box-shadow: 0px 2px 8px 0px rgb(152, 152, 152);
+}
+
+.teamsContainer {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamsContainer:nth-child(1) {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-right: 1px solid rgba(255, 255, 255, 0.231);
+}
+.teamsContainer:nth-child(3) {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-left: 1px solid rgba(255, 255, 255, 0.231);
+}
+
+.versusContainer {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
+.headerContainer {
+  position: relative;
+}
+
+.liveResultsHeader {
+  color: red;
+  font-size: 50px;
+}
+
+.teamNameContainer {
+  width: 60%;
+  height: 60%;
+  border-radius: 1em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+}
+
+.teamLogoContainerLeft,
+.teamLogoContainerRight {
+  background-color: gray;
+  height: 60%;
+  width: 10%;
+  border-radius: 50%;
+}
+.teamLogoContainerLeft {
+  margin-right: 10%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.teamLogoContainerRight {
+  margin-left: 10%;
+  background-repeat: no-repeat;
+
+  background-size: 100% 100%;
+  background-position: center;
+  background-color: transparent;
+}
