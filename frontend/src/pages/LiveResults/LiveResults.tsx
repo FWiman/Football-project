@@ -1,12 +1,7 @@
-import React, { useEffect } from "react";
-import FootballNews from "../../components/FootballNews/FootballNews";
-import TransferNews from "../../components/TransferNews/TransferNews";
-import LiveScores from "../../components/LiveScores/LiveScores";
-import styles from "./Home.module.css";
 import SingleVersusTab from "../../components/LiveScores/SingleVerusTab/SingleVersusTab";
-import { Teams } from "../../interfaces/Teams/TeamsInterface";
+import styles from "./LiveResults.module.css";
 
-const Home: React.FC = () => {
+const LiveResults: React.FC = () => {
   //Tabs variable to store array of SingleVersusTab components. This is mock data.
   const tabs: JSX.Element[] = [];
 
@@ -29,22 +24,21 @@ const Home: React.FC = () => {
       />
     );
   }
-
   return (
     <>
-      <div className={styles.home}>
-        <div className={styles.topSection}>
-          <div className={styles.news}>
-            <FootballNews />
-          </div>
-          <div className={styles.news}>
-            <TransferNews />
-          </div>
-        </div>
+      <div className={styles.mainHeader}>Live Results</div>
+      <div className={styles.liveScoresContainer}>
+        <h1 className={styles.leagueHeader}>Premier League</h1>
+
+        {tabs}
       </div>
       <div className={styles.liveScoresContainer}>
-        <h1 style={{ textAlign: "center", color: "red", fontSize: 50 }}>Live Results</h1>
-        <div className={styles.moreResultsButton}>More Results</div>
+        <h1 className={styles.leagueHeader}>La Liga</h1>
+
+        {tabs}
+      </div>
+      <div className={styles.liveScoresContainer}>
+        <h1 className={styles.leagueHeader}>Serie A</h1>
 
         {tabs}
       </div>
@@ -52,4 +46,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default LiveResults;

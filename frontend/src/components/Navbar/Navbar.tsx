@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <Link to="/">Logo</Link>
+        <Link to="/live-results">Live Results</Link>
       </div>
       <ul className={styles.navLinks}></ul>
       <SearchBar />
