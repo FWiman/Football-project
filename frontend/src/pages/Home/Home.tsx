@@ -3,8 +3,9 @@ import FootballNews from "../../components/FootballNews/FootballNews";
 import TransferNews from "../../components/TransferNews/TransferNews";
 import LiveScores from "../../components/LiveScores/LiveScores";
 import styles from "./Home.module.css";
-import SingleVersusTab from "../../components/LiveScores/SingleVerusTab/SingleVersusTab";
+import SingleVersusTab from "../../components/LiveScores/SingleVerusTab/SingleVersusTabComponent";
 import { Teams } from "../../interfaces/Teams/TeamsInterface";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   //Tabs variable to store array of SingleVersusTab components. This is mock data.
@@ -43,8 +44,10 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className={styles.liveScoresContainer}>
-        <h1 style={{ textAlign: "center", color: "red", fontSize: 50 }}>Live Results</h1>
-        <div className={styles.moreResultsButton}>More Results</div>
+        <h1 className={styles.liveHeader}>Live Results</h1>
+        <Link to="/live-results">
+          <div className={styles.moreResultsButton}>More Results</div>
+        </Link>
 
         {tabs}
       </div>

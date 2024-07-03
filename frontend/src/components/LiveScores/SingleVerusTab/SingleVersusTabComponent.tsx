@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "./SingleVersusTab.module.css";
+import styles from "./SingleVersusTabComponent.module.css";
 
 interface TeamInfo {
   teamName: string;
@@ -10,7 +10,7 @@ interface Teams {
   Teams: TeamInfo[];
 }
 
-const SingleVersusTab: React.FC<Teams> = (props: Teams) => {
+const SingleVersusTabComponent: React.FC<Teams> = (props: Teams) => {
   useEffect(() => {
     console.log("hello from singelversus tab");
     console.log("team logo: ", props.Teams[0].teamLogo);
@@ -31,4 +31,4 @@ const SingleVersusTab: React.FC<Teams> = (props: Teams) => {
   );
 };
 
-export default SingleVersusTab;
+export default SingleVersusTabComponent;

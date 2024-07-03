@@ -1,0 +1,19 @@
+.mainHeader {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.499);
+  font-size: 50px;
+  color: red;
+  text-align: center;
+}
+
+.sectionHeader {
+  margin-top: 5%;
+  text-align: center;
+  color: red;
+  font-size: 50;
+  background-color: black;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+}

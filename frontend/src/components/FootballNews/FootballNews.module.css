@@ -29,3 +29,13 @@
   font-size: 2rem;
   font-weight: bold;
 }
+.errorMessage:hover {
+  background-color: rgba(0, 0, 0, 0.347);
+  color: white;
+  cursor: pointer;
+}
+
+.noTextdecoration {
+  text-decoration: none;
+  color: black;
+}

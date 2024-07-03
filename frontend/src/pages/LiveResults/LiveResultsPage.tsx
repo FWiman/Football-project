@@ -1,14 +1,14 @@
-import SingleVersusTab from "../../components/LiveScores/SingleVerusTab/SingleVersusTab";
-import styles from "./LiveResults.module.css";
+import SingleVersusTabComponent from "../../components/LiveScores/SingleVerusTab/SingleVersusTabComponent";
+import styles from "./LiveResultsPage.module.css";
 
-const LiveResults: React.FC = () => {
+const LiveResultsPage: React.FC = () => {
   //Tabs variable to store array of SingleVersusTab components. This is mock data.
   const tabs: JSX.Element[] = [];
 
   //Store 5 tabs to be displayed. Change as you like.
   for (let i = 0; i < 5; i++) {
     tabs.push(
-      <SingleVersusTab
+      <SingleVersusTabComponent
         key={i}
         Teams={[
           {
@@ -46,4 +46,4 @@ const LiveResults: React.FC = () => {
   );
 };
 
-export default LiveResults;
+export default LiveResultsPage;

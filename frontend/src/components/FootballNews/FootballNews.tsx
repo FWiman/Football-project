@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./FootballNews.module.css";
+import { Link } from "react-router-dom";
 
 interface FootballNewsItem {
   id: number;
@@ -36,7 +37,14 @@ const FootballNews: React.FC = () => {
   }
 
   if (error) {
-    return <div className={styles.errorMessage}>{error}</div>;
+    return (
+      <Link className={styles.noTextdecoration} to="/pre-post-match-news">
+        <div className={styles.errorMessage}>
+          <div>{error}</div>
+          <div>CLICK ME ANYWAY :)</div>
+        </div>
+      </Link>
+    );
   }
 
   return (

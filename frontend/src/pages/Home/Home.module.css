@@ -26,8 +26,6 @@
   background-color: rgba(0, 0, 0, 0.499);
   margin-top: 5%;
   padding-top: 5px;
-  padding-bottom: 5%;
-
   padding-left: 10%;
   padding-right: 10%;
   border-radius: 8px;
@@ -53,4 +51,15 @@
 .moreResultsButton:hover {
   cursor: pointer;
   background-color: rgb(109, 107, 107);
+}
+
+.liveHeader {
+  text-align: center;
+  color: red;
+  font-size: 50;
+  background-color: black;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
 }
