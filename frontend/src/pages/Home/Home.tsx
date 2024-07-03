@@ -35,12 +35,16 @@ const Home: React.FC = () => {
     <>
       <div className={styles.home}>
         <div className={styles.topSection}>
-          <div className={styles.news}>
-            <FootballNews />
-          </div>
-          <div className={styles.news}>
-            <TransferNews />
-          </div>
+          <Link className={(styles.noTextDecoration, styles.transferNewsSection)} to="/pre-post-match-news">
+            <div className={styles.news}>
+              <FootballNews />
+            </div>
+          </Link>
+          <Link className={(styles.noTextDecoration, styles.transferNewsSection)} to="/transfer-news">
+            <div className={styles.news}>
+              <TransferNews />
+            </div>
+          </Link>
         </div>
       </div>
       <div className={styles.liveScoresContainer}>
