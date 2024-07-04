@@ -64,9 +64,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         }
 
         const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-        const scale = numberWithinRange(tweenValue, 0, 1).toString();
+        const scale = numberWithinRange(tweenValue, 0.5, 0.8).toString();
+        const opacity = numberWithinRange(tweenValue, 0.2, 1).toString();
         const tweenNode = tweenNodes.current[slideIndex];
         tweenNode.style.transform = `scale(${scale})`;
+        tweenNode.style.opacity = `${opacity}`;
       });
     });
   }, []);
@@ -87,7 +89,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
+              <div className="embla__slide__number">
+                {index + 1}
+                <div className="player-number">1</div>
+                <h1 className="player-name">Stelios Giannakopoulos</h1>
+              </div>
             </div>
           ))}
         </div>
