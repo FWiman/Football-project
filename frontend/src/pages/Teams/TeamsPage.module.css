@@ -1,0 +1,34 @@
+.teamLogo {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.mainHeader {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.499);
+  font-size: 50px;
+  color: red;
+  text-align: center;
+}
+
+.liveScoresContainer {
+  position: relative;
+  margin: 0% 10% 0% 10%;
+  background-color: rgba(0, 0, 0, 0.499);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.leagueHeader {
+  text-align: center;
+  color: red;
+  font-size: 50;
+  background-color: black;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+}

@@ -22,7 +22,7 @@ const SingleVersusTabComponent: React.FC<Teams> = (props: Teams) => {
         <div className={styles.teamNameContainer}>{props.Teams[0].teamName}</div>
         <div className={styles.teamLogoContainerLeft} style={{ backgroundImage: `url(${props.Teams[0].teamLogo}` }}></div>
       </div>
-      <div className={styles.versusContainer}>VS</div>
+      <div className={styles.versusContainer}>1 - 2</div>
       <div className={styles.teamsContainer}>
         <div className={styles.teamLogoContainerRight} style={{ backgroundImage: `url(${props.Teams[1].teamLogo}` }}></div>
         <div className={styles.teamNameContainer}>{props.Teams[1].teamName}</div>

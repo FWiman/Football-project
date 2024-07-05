@@ -8,12 +8,9 @@
 
 .liveScoresContainer {
   position: relative;
+  margin: 0% 10% 0% 10%;
   background-color: rgba(0, 0, 0, 0.499);
-  margin-top: 5%;
-  padding-top: 5px;
-  padding-bottom: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 10px;
   border-radius: 8px;
 }
 

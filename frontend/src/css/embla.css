@@ -1,5 +1,5 @@
 .embla {
-  width: 80%;
+  width: 90%;
   margin: auto;
   --slide-height: 50rem;
   --slide-spacing: 1rem;
@@ -16,7 +16,7 @@
   margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
-  max-width: 20%;
+  /* max-width: 20%; */
   flex: 0 0 var(--slide-size);
   min-width: 20px;
   padding-left: var(--slide-spacing);
